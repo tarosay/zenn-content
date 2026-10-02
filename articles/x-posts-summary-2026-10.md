@@ -3,7 +3,7 @@ title: "URB Block Lab と最近のXの投稿まとめ（UIAPduino・WebHID）"
 emoji: "🧩"
 type: "tech"
 topics: ["uiapduino", "ruby", "webhid", "coderdojo", "電子工作"]
-published: false
+published: true
 ---
 
 X（[@momoonga](https://x.com/momoonga)）に投稿した内容を、2026年9月20日から10月3日までの5件についてまとめました。5件のうち3件が URB Block の話なので、先に URB Block が何なのかを書いておきます。
