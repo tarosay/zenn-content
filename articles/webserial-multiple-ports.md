@@ -16,7 +16,7 @@ published: true
 
 この記事は、Xcratch用拡張機能「[マルチシリアル接続](https://github.com/tarosay/xcratch-multi-serial)」の開発記録です。**2026年10月13〜14日のポート接続の実機検証を中心に、観測した事実と原因が未解明の部分を分けて**書きます。
 
-<!-- 作品紹介・使い方の記事をZennに公開した後、この位置にリンクを追加する -->
+関連記事（紹介編・使い方）：[micro:bitから始まった、複数のUSBシリアル機器を扱えるScratch拡張](https://zenn.dev/tarosay/articles/xcratch-multi-serial)
 
 ## 前提：`requestPort()`は好きなタイミングで呼べない
 
@@ -205,7 +205,7 @@ _choosePort (index, baudRate) {
 
 **ハードウェアを減らす工夫と、ソフトウェアを分離する工夫は別の話。** 今回作ったマルチシリアル拡張は、独立した通信経路を必要とする場面で引き続き使えます。**この利点はmicro:bitに限らず、複数のシリアル機器をScratchから使う場合にも共通します。**
 
-<!-- 作品紹介編を公開したら、この位置にリンクを追加する -->
+関連記事（紹介編）：[micro:bitから始まった、複数のUSBシリアル機器を扱えるScratch拡張](https://zenn.dev/tarosay/articles/xcratch-multi-serial)
 
 ## おわりに
 
@@ -218,5 +218,4 @@ APIのドキュメントを読んで設計しても、実機で試すと、想�
 - [xcratch-multi-serial（GitHub）](https://github.com/tarosay/xcratch-multi-serial)
 - [紹介ページ](https://tarosay.github.io/xcratch-multi-serial/)
 - [変更を加えたコミット `53354c0`](https://github.com/tarosay/xcratch-multi-serial/commit/53354c0)
-
-<!-- 作品紹介編を公開したら、ここにも相互リンクを追加する -->
+- [紹介編：micro:bitから始まった、複数のUSBシリアル機器を扱えるScratch拡張](https://zenn.dev/tarosay/articles/xcratch-multi-serial)

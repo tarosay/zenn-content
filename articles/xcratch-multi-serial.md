@@ -138,7 +138,7 @@ Scratchのブロックを文章で表すと、次のようになります。
 
 そこで、**2台目以降は次のクリックを待つ**仕組みにしました。実機で試した内容と実装上の判断は、別の技術記事で詳しく紹介します。
 
-<!-- 技術編をZennに公開した後、この位置に関連記事リンクを追加する -->
+関連記事（技術編）：[Web Serial APIで2台目のポートが選べない──Scratch拡張の試行錯誤](https://zenn.dev/tarosay/articles/webserial-multiple-ports)
 
 ## 行受信とバイト受信のブロック
 
@@ -255,6 +255,5 @@ Scratchの作品はまだ制作中ですが、受信機1台での動作は確認
 
 - [公開ページ](https://tarosay.github.io/xcratch-multi-serial/)
 - [ソースコード（GitHub）](https://github.com/tarosay/xcratch-multi-serial)
+- [技術編：Web Serial APIで2台目のポートが選べない──Scratch拡張の試行錯誤](https://zenn.dev/tarosay/articles/webserial-multiple-ports)
 - [前回のZenn記事：URB Block Labと最近のXの投稿まとめ](https://zenn.dev/tarosay/articles/x-posts-summary-2026-10)
-
-<!-- 技術編を公開したら、ここにも相互リンクを追加する -->
