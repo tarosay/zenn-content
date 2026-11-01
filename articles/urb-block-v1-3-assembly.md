@@ -59,7 +59,7 @@ URB Block v1.3は **1.0mm厚** です。後半に掲載するはんだ付けの�
 
 両側の端子穴を合わせ、ヘッダピンを通して2枚を重ねます。はんだ付けの前に、向きと位置がずれていないことを確認してください。
 
-![ヘッダピンで2枚の基板を仮組みした様子を真上から撮影した写真](/images/urb-block-v1-3-assembly/stack-before-soldering-top.jpg)
+![ヘッダピンで2枚の基板を仮組みした様子を真上から撮影した写真](/images/urb-block-v1-3-assembly/stack-before-soldering-top.webp)
 
 *はんだ付け前の仮組み（真上から）。下側の基板は、上のUIAPduinoに隠れています。*
 
