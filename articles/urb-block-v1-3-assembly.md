@@ -6,112 +6,138 @@ topics: ["ruby", "uiapduino", "eeprom", "電子工作", "はんだ付け"]
 published: false
 ---
 
-この記事では、**URB Block v1.3** をUIAPduinoに取り付ける方法を、写真を使って説明します。2枚の基板の重ね方と、はんだ付けの手順をまとめています。
+URB Block v1.3を受け取った方が、UIAPduinoと接続して使えるように、基板の重ね方とはんだ付け方法を写真で説明します。
+
+先日、東京で多くの方に基板をお渡ししましたが、その場では組み立て方法まで説明できませんでした。この記事は、そのとき受け取った方にも、これから基板を手にする方にも使っていただくためのものです。
 
 ## URB Block v1.3は何をする基板？
 
 **UIAPduino** は、CH32V003を搭載したマイコン基板です。
 
-**URB Block v1.3** は、UIAPduinoに **I2C接続のEEPROM** を追加するための基板です。
+**URB Block v1.3** は、UIAPduinoに **I2C接続のEEPROM** を追加する基板です。RubyのプログラムをUIAPduino上の小さな実行環境 **TinyVM** で実行するため、Rubyから変換したバイトコード（URB1形式）をEEPROMに保存します。また、EEPROMは変数などの保存にも利用します。
 
-ブラウザ上で作成したRubyのプログラムは、UIAPduinoの小さな実行環境「TinyVM」向けのバイトコード（URB1形式）に変換され、EEPROMに書き込まれます。UIAPduinoは、そのバイトコードを読み出して実行します。EEPROMはプログラムだけでなく、変数などの保存にも使われます。
+プログラムの作成方法は、ブロックを使う **URB Block Lab** に限定されません。Rubyコードを直接入力する **URB EE Lab** でも利用できます。プログラムを書き込んだあとは、電源を供給することで、PCに接続せずに実行できます。
 
-この仕組みは、ブロックからRubyを作る **URB Block Lab** だけのものではありません。Rubyコードを入力する **URB EE Lab** でも利用できます。書き込み後は、電源を供給すれば、PCに接続せずにプログラムを実行できます。
+![URB Block v1.3。EEPROMとQRコードのある面の切り抜き画像](/images/urb-block-v1-3-assembly/urb-block-v1-3-front.png)
 
-![URB Block v1.3のEEPROMとQRコードがある面](/images/urb-block-v1-3-assembly/urb-block-v1-3-front.jpg)
-*URB Block v1.3。中央のICがEEPROMです。*
+*URB Block v1.3。中央付近の8ピンICがEEPROMです。*
 
-基板に印刷されたQRコードのリンク先は、各種ツールをまとめた [UIAPduino WebHID Lab](https://tarosay.github.io/uiap-hid-web/) です。
+基板上のQRコードは、[UIAPduino WebHID Lab](https://tarosay.github.io/uiap-hid-web/) へのリンクです。プログラムの作成・書き込みに使うツールへは、こちらから進めます。
 
 ## 用意するもの
 
-- URB Block v1.3 基板
-- UIAPduino 基板
-- 両側の端子に通すヘッダピン
+- URB Block v1.3基板
+- UIAPduino基板
+- 2列分のヘッダピン（基板両側の端子に取り付けるもの）
 - はんだごて、はんだ
 
-この記事では、**URB Block v1.3の基板厚は1.0mm** です。後半のはんだ付け説明に使用する参考写真は、**基板厚1.6mmのURB Block基板** を使って撮影したものです。
+:::message
+**写真の基板厚について**
 
-### 2枚の基板の表裏
-
-![URB Block v1.3の裏面。EEPROMなどの部品がない青い面](/images/urb-block-v1-3-assembly/urb-block-v1-3-back.jpg)
-*URB Block v1.3の裏面。*
-
-![UIAPduinoの部品面。USB Type-Cコネクタとリセットボタンが見える](/images/urb-block-v1-3-assembly/uiapduino-front.jpg)
-*UIAPduinoの部品面。*
-
-![UIAPduinoの裏面。端子名とQRコードが印刷されている](/images/urb-block-v1-3-assembly/uiapduino-back.jpg)
-*UIAPduinoの裏面。*
-
-## 1. 向きを確認し、ヘッダピンで2枚を重ねる
-
-UIAPduinoの **USB Type-Cコネクタが上** に来る向きで置きます。URB Block v1.3は、**部品がない青い裏面をUIAPduino側** に向けます。
-
-2枚の基板の両側の端子穴をそろえ、ヘッダピンを通して重ねます。
-
-![はんだ付け前、ヘッダピンを通して2枚の基板を重ねた状態を真上から見た写真](/images/urb-block-v1-3-assembly/stack-before-soldering-top.jpg)
-*はんだ付け前の仮組み（真上から）。*
-
-![はんだ付け前、重なった2枚の基板とヘッダピンを斜めから見た写真](/images/urb-block-v1-3-assembly/stack-before-soldering-angle.jpg)
-*斜めから見ると、2枚の基板とヘッダピンの位置関係が分かります。*
-
-## 2. ヘッダピンをはんだ付けする
-
-2枚の基板の位置がずれないようにして、ヘッダピンをはんだ付けします。**すべてのピンを丁寧にはんだ付け** してください。
-
-![ヘッダピンの各端子をはんだ付けした状態の参考写真](/images/urb-block-v1-3-assembly/all-header-pins-soldered-reference.jpg)
-*ヘッダピンのはんだ付け例（基板厚1.6mmの参考写真）。*
-
-:::message alert
-**ここで終わりではありません。** ヘッダピンをはんだ付けしただけでは、URB Block基板上のEEPROMがUIAPduinoにつながりません。次の **側面のはんだ付け** が必要です。
+今回のURB Block v1.3は **1.0mm厚** です。後半に掲載するはんだ付けの参考写真は、**1.6mm厚の基板** を使って撮影したものです。
 :::
 
-## 3. 側面の端子をURB Blockの配線パターンにつなぐ
+## 1. 基板の表と裏、重ねる向きを確認する
 
-UIAPduinoの側面にある端子と、下側のURB Block基板の配線パターンを、はんだで電気的につなぎます。
+最初に、2枚の基板を確認します。
 
-接続する信号は、I2Cの2本と電源です。
+**URB Block v1.3** は、EEPROMが載っている面と、部品が載っていない青い面があります。
 
-| UIAPduinoの端子 | 役割 |
+![URB Block v1.3の部品が載っていない青い面の切り抜き画像](/images/urb-block-v1-3-assembly/urb-block-v1-3-back.png)
+
+*URB Block v1.3の部品が載っていない面。*
+
+**UIAPduino** の部品面には、USB Type-Cコネクタとリセットボタンがあります。
+
+![UIAPduinoのUSB Type-Cコネクタとリセットボタンがある部品面の切り抜き画像](/images/urb-block-v1-3-assembly/uiapduino-front.png)
+
+*UIAPduinoの部品面。*
+
+![UIAPduinoのQRコードと端子表示がある裏面の切り抜き画像](/images/urb-block-v1-3-assembly/uiapduino-back.png)
+
+*UIAPduinoの裏面。*
+
+**重ねる向きが重要です。** UIAPduinoは部品面を上にし、URB Block v1.3は**部品のない青い面がUIAPduino側**を向くように重ねます。URB BlockのEEPROMが載った面は外側になります。
+
+## 2. ヘッダピンを通して2枚を重ねる
+
+両側の端子穴を合わせ、ヘッダピンを通して2枚を重ねます。はんだ付けの前に、向きと位置がずれていないことを確認してください。
+
+![ヘッダピンで2枚の基板を仮組みした様子を真上から撮影した写真](/images/urb-block-v1-3-assembly/stack-before-soldering-top.jpg)
+
+*はんだ付け前の仮組み（真上から）。下側の基板は、上のUIAPduinoに隠れています。*
+
+![2枚の基板とヘッダピンを斜めから撮影した写真。黒いヘッダピンの樹脂部分と基板の重なりが見える](/images/urb-block-v1-3-assembly/stack-before-soldering-angle.jpg)
+
+*斜めから見ると、重なった2枚の基板とヘッダピンの位置が分かります。*
+
+## 3. ヘッダピンをはんだ付けする
+
+2枚の基板をずらさないようにして、ヘッダピンの各端子をはんだ付けします。**両側のピンをすべてはんだ付け**してください。
+
+![UIAPduinoのヘッダピンをすべてはんだ付けした参考写真](/images/urb-block-v1-3-assembly/all-header-pins-soldered-reference.jpg)
+
+*ヘッダピンのはんだ付け例。写真のURB Block基板は1.6mm厚です。*
+
+:::message alert
+**ヘッダピンのはんだ付けだけでは、EEPROMは接続されません。**
+
+次に説明する、**UIAPduinoの側面端子とURB Blockの配線パターンをつなぐはんだ付け**が必要です。ここが大切な作業です。
+:::
+
+## 4. 側面をはんだ付けしてEEPROMを接続する
+
+UIAPduinoの側面端子から、下側のURB Block v1.3の配線パターンへ、はんだを流して接続します。
+
+接続に必要なのは **I2Cの信号2本と、電源の5V・GND** です。
+
+| UIAPduinoの端子 | 用途 |
 | --- | --- |
-| 3番 | I2C SDA（データ） |
-| 4番 | I2C SCL（クロック） |
-| 5V | EEPROMの電源 |
-| GND | GND（接地） |
+| **3番** | I2CのSDA（データ） |
+| **4番** | I2CのSCL（クロック） |
+| **5V** | 電源 |
+| **GND** | グラウンド |
 
-### GND・3番・4番の側面
+### 4-1. GND・3番・4番の側面
 
-下の写真の **赤丸部分** のように、UIAPduinoの **GND・3番・4番** の側面から、URB Blockの配線パターンへはんだを流して接続します。
+USBコネクタを上にしてUIAPduinoの部品面を見ると、**GND・3番・4番** は左側にあります。下の参考写真の**赤丸部分**のように、それぞれの端子の側面をURB Blockの配線パターンへはんだでつなぎます。
 
-![GND、3番、4番の側面のはんだ付け位置を赤丸で示した参考写真](/images/urb-block-v1-3-assembly/sda-scl-side-soldering-reference.png)
-*左側の接続箇所（基板厚1.6mmの参考写真）。*
+![GND、3番、4番の側面はんだ付け位置を赤丸で示した参考写真](/images/urb-block-v1-3-assembly/sda-scl-side-soldering-reference.png)
 
-### 5V・GNDの側面
+*GND・3番（SDA）・4番（SCL）の接続箇所。1.6mm厚基板による参考写真。*
 
-反対側も同様に、**5V・GND** とURB Blockの配線パターンをつなぎます。写真の赤丸部分が接続箇所です。
+### 4-2. 5V・GNDの側面
 
-![5V、GNDの側面のはんだ付け位置を赤丸で示した参考写真](/images/urb-block-v1-3-assembly/power-side-soldering-reference.png)
-*電源側の接続箇所（基板厚1.6mmの参考写真）。*
+同じくUSBコネクタを上にして見ると、**5V・GND** は右側です。こちらも写真の**赤丸部分**をはんだで接続します。
 
-重要なのは、**3番（SDA）、4番（SCL）、5V、GNDの4種類の信号** が、UIAPduinoからURB Blockへつながることです。参考資料ではGNDの接続箇所が両側に写っています。
+![5VとGNDの側面はんだ付け位置を赤丸で示した参考写真](/images/urb-block-v1-3-assembly/power-side-soldering-reference.png)
 
-はんだ付け作業はUSBケーブルを外した状態で行い、隣り合う端子を意図せずはんだでつないでしまわないようにしてください。
+*5V・GNDの接続箇所。1.6mm厚基板による参考写真。*
 
-## 4. はんだ付けした箇所を確認する
+2枚の写真には、左右それぞれのGND端子が写っています。**必要な信号は3番（SDA）、4番（SCL）、5V、GNDの4種類**です。
 
-組み立てが終わったら、次の点を目で確かめます。
+:::message
+側面のはんだ付けでは、**UIAPduinoの端子とURB Blockの配線パターンの両方にはんだがつながっていること**を確認してください。隣の端子とつながらないように注意します。
+:::
 
-- ヘッダピンの各端子がはんだ付けされている
-- 3番・4番・5V・GNDの側面がURB Blockの配線パターンにつながっている
-- 隣の端子同士にはんだの短絡がない
+## 5. はんだ付け後の確認
 
-必要に応じて、電源をつなぐ前にテスターでも導通・短絡を確認してください。
+USBケーブルを外した状態で作業し、はんだ付けが終わったら、次の点を確認します。
 
-## ピン配置と開発環境
+- ヘッダピンの各端子がはんだ付けされていること
+- **3番・4番・5V・GND** が、URB Blockの配線パターンに接続されていること
+- 隣り合う端子間に、意図しないはんだのつながりがないこと
 
-![UIAPduinoの端子配置図。I2C SDAは3番、SCLは4番](/images/urb-block-v1-3-assembly/uiapduino-pinout-reference.jpg)
-*UIAPduinoピン配置図：Yuuki U.、CC BY 4.0（元の説明資料に掲載）。*
+必要であれば、電源を入れる前にテスターで導通・短絡も確認してください。
 
-プログラムの作成・書き込みについては、[UIAPduino WebHID Lab](https://tarosay.github.io/uiap-hid-web/) を参照してください。URB Block LabやURB EE Labへの入口も、こちらにあります。
+## UIAPduinoのピン配置とプログラムの書き込み
 
-この記事は、**URB Block v1.3とUIAPduinoを接続するための組み立て手順** を説明したものです。これで、URB Block v1.3を使い始める準備が整います。
+各端子の位置は、次のピン配置図でも確認できます。
+
+![UIAPduinoのピン配置図。3番はSDA、4番はSCL](/images/urb-block-v1-3-assembly/uiapduino-pinout-reference.jpg)
+
+*UIAPduinoピン配置図。原図：Yuuki U.（CC BY 4.0）。*
+
+プログラムの作成・書き込みには、[UIAPduino WebHID Lab](https://tarosay.github.io/uiap-hid-web/) をご覧ください。
+
+このページで説明したのは、**Rubyを実行するためのEEPROM基板「URB Block v1.3」とUIAPduinoを接続する組み立て方法**です。EEPROMを使うためには、ヘッダピンだけでなく、側面の4種類の信号を確実に接続することがポイントです。
