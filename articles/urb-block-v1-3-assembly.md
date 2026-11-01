@@ -14,8 +14,6 @@ URB Block v1.3をUIAPduinoと接続して使えるように、基板の重ね方
 
 **URB Block v1.3** は、UIAPduinoに **I2C接続のEEPROM** を追加する基板です。RubyのプログラムをUIAPduino上の小さな実行環境 **TinyVM** で実行するため、Rubyから変換したバイトコード（URB1形式）をEEPROMに保存します。また、EEPROMは変数などの保存にも利用します。
 
-プログラムの作成方法は、ブロックを使う **URB Block Lab** に限定されません。Rubyコードを直接入力する **URB EE Lab** でも利用できます。プログラムを書き込んだあとは、電源を供給することで、PCに接続せずに実行できます。
-
 ![URB Block v1.3。EEPROMとQRコードのある面の切り抜き画像](/images/urb-block-v1-3-assembly/urb-block-v1-3-front.png)
 
 *URB Block v1.3。中央付近の8ピンICがEEPROMです。*
