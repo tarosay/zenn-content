@@ -3,7 +3,7 @@ title: "UIAPduinoでRubyを動かすためのEEPROM基板 ― URB Block v1.3の�
 emoji: "🔧"
 type: "tech"
 topics: ["ruby", "uiapduino", "eeprom", "電子工作", "はんだ付け"]
-published: false
+published: true
 ---
 
 URB Block v1.3をUIAPduinoと接続して使えるように、基板の重ね方とはんだ付け方法を写真で説明します。
