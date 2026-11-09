@@ -3,7 +3,7 @@ title: "Scratch で覚えたブロックで、もの作りへ ― UIAPduino 290 
 emoji: "🧩"
 type: "tech"
 topics: ["ruby", "uiapduino", "coderdojo", "電子工作", "scratch"]
-published: false
+published: true
 ---
 
 ## 290 円のマイコンと 32KB の EEPROM 90 円で、Ruby とブロックのプログラミング環境ができる
